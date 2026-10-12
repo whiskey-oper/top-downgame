@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bq0mdyduyvlas"]
+[gd_scene load_steps=2 format=3 uid="uid://bq0mdyduyvlas"]
+
+[ext_resource type="Texture2D" uid="uid://cxyrqsae4881r" path="res://Assests/Sprites/sprite_sheet.png" id="1_lccm0"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lccm0")
