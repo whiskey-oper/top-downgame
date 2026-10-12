@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dihhd23icwbbk"]
+
+[node name="eneamie" type="CharacterBody2D"]
+
+[node name="eneamieespwite" type="Sprite2D" parent="."]
