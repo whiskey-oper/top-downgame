@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bq0mdyduyvlas"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

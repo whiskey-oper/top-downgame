@@ -1,3 +1,3 @@
 [gd_scene format=3 uid="uid://cnbmxn5askeer"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Level_1" type="Node2D"]
