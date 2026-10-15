@@ -10,8 +10,8 @@ size = Vector2(26, 26)
 motion_mode = 1
 script = ExtResource("1_8empa")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="spurright200DEE" type="Sprite2D" parent="."]
 texture = ExtResource("1_lccm0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="irefusetocollide200DEE" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wci0t")
