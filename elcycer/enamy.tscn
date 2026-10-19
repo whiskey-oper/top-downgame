@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmvbrryshqpa1"]
+
+[sub_resource type="GDScript" id="GDScript_5e6vq"]
+script/source = "extends RigidBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="enamy" type="RigidBody2D"]
+script = SubResource("GDScript_5e6vq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
