@@ -5,4 +5,5 @@
 [node name="Level 1" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(16, 16)
 tile_set = SubResource("TileSet_qqy1o")
