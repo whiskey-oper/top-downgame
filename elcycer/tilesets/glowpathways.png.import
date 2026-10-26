@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5nowyqysvf8k"
-path="res://.godot/imported/Metal_tileset.png-8360c9d28b6eb3e06222ced432444b4e.ctex"
+uid="uid://crwikgj64q2"
+path="res://.godot/imported/glowpathways.png-5db4900df43386eb845018c980424317.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/Metal_tileset.png"
-dest_files=["res://.godot/imported/Metal_tileset.png-8360c9d28b6eb3e06222ced432444b4e.ctex"]
+source_file="res://tilesets/glowpathways.png"
+dest_files=["res://.godot/imported/glowpathways.png-5db4900df43386eb845018c980424317.ctex"]
 
 [params]
 
