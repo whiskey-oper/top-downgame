@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6n2fueab74sl"]
+
+[ext_resource type="Script" uid="uid://rgcx5n3x14tc" path="res://TRUEENEMY.gd" id="1_w1wun"]
+[ext_resource type="Texture2D" uid="uid://cfsyquaiahoa0" path="res://icon.svg" id="2_qnbuq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mgwdc"]
+radius = 47.0
+height = 134.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qnbuq"]
+radius = 290.043
+
+[node name="TRUEENEMY" type="CharacterBody2D"]
+script = ExtResource("1_w1wun")
+
+[node name="placeholder" type="Sprite2D" parent="."]
+texture = ExtResource("2_qnbuq")
+
+[node name="physicalhitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mgwdc")
+
+[node name="detectionzone" type="Area2D" parent="."]
+
+[node name="sightrange" type="CollisionShape2D" parent="detectionzone"]
+shape = SubResource("CircleShape2D_qnbuq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="patrolpoint" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="detectionzone" to="." method="_on_detectionzone_body_entered"]
+[connection signal="body_exited" from="detectionzone" to="." method="_on_detectionzone_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

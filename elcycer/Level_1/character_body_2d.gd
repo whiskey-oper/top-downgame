@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #uuuu too slow go faster
-@export var move_speed : float = 150
+@export var move_speed : float = 300
 
 
 func _physics_process(_delta):
