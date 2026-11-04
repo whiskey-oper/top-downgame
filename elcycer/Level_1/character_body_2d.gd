@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #uuuu too slow go faster
-@export var move_speed : float = 150
+@export var move_speed : float = 500
 
 
 func _physics_process(_delta):
@@ -23,7 +23,11 @@ func _physics_process(_delta):
 # now i shall take the liberty of enhancing ur already marvellous work
 # since ur not here 4 a mysterious reason
 # get a gud nite's sleep next time will u?
-
 # BREAKING NEWS: ive done absolutely nothing sowi
 # im getting fired
 # Reduced cartoon sqwashs.sfx for sean
+# thursday
+func _ready() -> void:
+		add_to_group("Player")
+# dude u really needa stop skippin every day mysteriously
+# school helps expand ur knowledge yknow

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[node name="enamy" type="RigidBody2D"]
+[node name="enamy(oldpoopoonotusing)" type="RigidBody2D"]
 script = SubResource("GDScript_5e6vq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
