@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6n2fueab74sl"]
 
 [ext_resource type="Script" uid="uid://rgcx5n3x14tc" path="res://TRUEENEMY.gd" id="1_w1wun"]
-[ext_resource type="Texture2D" uid="uid://cfsyquaiahoa0" path="res://icon.svg" id="2_qnbuq"]
+[ext_resource type="Texture2D" uid="uid://5w0jmmp127t" path="res://Assests/Sprites/enamamaidleforward-1.png.png" id="2_qnbuq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mgwdc"]
-radius = 47.0
-height = 134.0
+radius = 31.0
+height = 130.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qnbuq"]
 radius = 290.043
@@ -13,7 +13,9 @@ radius = 290.043
 [node name="TRUEENEMY" type="CharacterBody2D"]
 script = ExtResource("1_w1wun")
 
-[node name="placeholder" type="Sprite2D" parent="."]
+[node name="stinkyboi" type="Sprite2D" parent="."]
+position = Vector2(1.00002, 0)
+scale = Vector2(3.90625, 3.90625)
 texture = ExtResource("2_qnbuq")
 
 [node name="physicalhitbox" type="CollisionShape2D" parent="."]
