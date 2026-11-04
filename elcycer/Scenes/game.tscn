@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpqma4ixb215t"]
+[gd_scene load_steps=4 format=3 uid="uid://dpqma4ixb215t"]
 
 [ext_resource type="PackedScene" uid="uid://lpqcktsb5xkj" path="res://Scenes/level_1.tscn" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://brmtirx8y6ki0" path="res://Level_1/character_body_2d.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://c2c1w458m7lcp" path="res://trueenemy.tscn" id="4_wowpa"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Level 1" parent="." instance=ExtResource("1_qxrlw")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_wrm1d")]
+
+[node name="TRUEENEMY" parent="." instance=ExtResource("4_wowpa")]
+position = Vector2(1576, 347)
+
+[node name="patrolpoints" type="Node2D" parent="TRUEENEMY"]
+
+[node name="position1" type="Node2D" parent="TRUEENEMY/patrolpoints"]
+position = Vector2(-2905, 801)
+
+[node name="position2" type="Node2D" parent="TRUEENEMY/patrolpoints"]
+position = Vector2(-1290, -624)

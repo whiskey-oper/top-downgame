@@ -1,19 +1,21 @@
-extends CharacterBody2D
+extends Node2D
 
 enum State { PATROL, ATTACK }
 var current_state: State = State.PATROL # Default state
 
-@export var speed: float = 80.0
+@export var speed: float = 300.0
 @export var bullet_scene: PackedScene = preload("res://Bullet.tscn") # Load projectile
+@export var patrol1_x = -2905
+@export var patrol1_y = 801
 
 # Patrol logic variables
-@onready var patrol_points = $PatrolPoints.get_children()
+@onready var patrol_points = $patrolpoints.get_children()
 var current_point_index: int = 0
-var patrol_tolerance: float = 10.0 # Distance check threshold
+var patrol_tolerance: float = 20.0 # Distance check threshold
 
 # Target track variables
 var player: CharacterBody2D = null
-@onready var shoot_timer: Timer = $ShootTimer
+@onready var shoot_timer: Timer = $shoottimerTimer
 
 func _ready() -> void:
 	current_state = State.PATROL
@@ -21,35 +23,37 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	match current_state:
 		State.PATROL:
-			handle_patrol()
+			handle_patrol(delta)
 		State.ATTACK:
-			handle_attack()
+			handle_attack(delta)
 
-func handle_patrol() -> void:
+func handle_patrol(delta) -> void:
 	if patrol_points.size() == 0:
 		return
 		
 	var target_point = patrol_points[current_point_index]
 	var direction = global_position.direction_to(target_point.global_position)
 	
-	velocity = direction * speed
-	move_and_slide()
+	position += direction * speed * delta
 	
+	print(global_position)
+	print(target_point.global_position)
 	# If close enough to current patrol point, switch to the next point
 	if global_position.distance_to(target_point.global_position) < patrol_tolerance:
+		print("positionreached")
 		current_point_index = (current_point_index + 1) % patrol_points.size()
 
-func handle_attack() -> void:
+func handle_attack(delta) -> void:
 	# Stop moving while shooting
-	velocity = Vector2.ZERO
-	move_and_slide()
+	position = Vector2.ZERO
+
 	
 	# Optional: Make the sprite flip towards the player
 	if player:
 		$Sprite2D.flip_h = (player.global_position.x < global_position.x)
 
 # Connected from DetectionArea (body_entered)
-func _on_detection_area_body_entered(body: Node2D) -> void:
+func _on_detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player = body
 		current_state = State.ATTACK
@@ -90,4 +94,12 @@ func _on_detectionzone_body_exited(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	pass # Replace with function body.as
+
+
+
+	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()
