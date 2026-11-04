@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxyrqsae4881r" path="res://Assests/Sprites/sprite_sheet.png" id="1_lccm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8empa"]
-size = Vector2(326, 314)
+size = Vector2(254, 240.5)
 
 [sub_resource type="Animation" id="Animation_wci0t"]
 length = 0.001
@@ -98,8 +98,7 @@ _data = {
 script = ExtResource("1_8empa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 0.0946131)
-scale = Vector2(10.8735, 10.4434)
+scale = Vector2(8.48038, 8.04508)
 texture = ExtResource("1_lccm0")
 hframes = 2
 vframes = 2
