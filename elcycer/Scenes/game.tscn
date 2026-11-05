@@ -13,3 +13,10 @@
 [node name="TRUEENEMY" parent="." instance=ExtResource("4_wowpa")]
 position = Vector2(1576, 347)
 patrol_points = Array[Vector2]([Vector2(-1500, 1300), Vector2(0, -300), Vector2(1500, 300), Vector2(-800, 0)])
+
+[node name="TRUEENEMY2" parent="." instance=ExtResource("4_wowpa")]
+position = Vector2(-1714, 1376)
+patrol_points = Array[Vector2]([Vector2(1600, 1300), Vector2(-400, -400), Vector2(-500, 600), Vector2(-1200, 1400)])
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-1157, 1460)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0mf0bsyhcedn"]
+
+[ext_resource type="Texture2D" uid="uid://cfsyquaiahoa0" path="res://icon.svg" id="1_tjas4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5dl2"]
+size = Vector2(120, 121)
+
+[node name="escapething" type="Node2D"]
+
+[node name="seeme" type="Sprite2D" parent="."]
+texture = ExtResource("1_tjas4")
+
+[node name="touchme" type="Area2D" parent="."]
+
+[node name="touchmeactually" type="CollisionShape2D" parent="touchme"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_a5dl2")
