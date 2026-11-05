@@ -3,13 +3,11 @@ extends Node2D
 enum State { PATROL, ATTACK }
 var current_state: State = State.PATROL # Default state
 
-@export var speed: float = 300.0
+@export var speed: float = 500.0
 @export var bullet_scene: PackedScene = preload("res://Bullet.tscn") # Load projectile
-@export var patrol1_x = -2905
-@export var patrol1_y = 801
+@export var patrol_points : Array[Vector2]
 
 # Patrol logic variables
-@onready var patrol_points = $patrolpoints.get_children()
 var current_point_index: int = 0
 var patrol_tolerance: float = 20.0 # Distance check threshold
 
@@ -32,15 +30,13 @@ func handle_patrol(delta) -> void:
 		return
 		
 	var target_point = patrol_points[current_point_index]
-	var direction = global_position.direction_to(target_point.global_position)
+	var direction = global_position.direction_to(target_point)
 	
 	position += direction * speed * delta
 	
-	print(global_position)
-	print(target_point.global_position)
 	# If close enough to current patrol point, switch to the next point
-	if global_position.distance_to(target_point.global_position) < patrol_tolerance:
-		print("positionreached")
+	if global_position.distance_to(target_point) < patrol_tolerance:
+		print("position reached")
 		current_point_index = (current_point_index + 1) % patrol_points.size()
 
 func handle_attack(delta) -> void:
