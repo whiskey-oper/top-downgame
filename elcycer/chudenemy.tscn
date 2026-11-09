@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4xt4m7xts7vr"]
+
+[ext_resource type="Script" uid="uid://rgcx5n3x14tc" path="res://TRUEENEMY.gd" id="1_xw7cw"]
+[ext_resource type="Texture2D" uid="uid://b2dr8ah1lefid" path="res://Assests/Sprites/grunktheplaceholder.png.png" id="2_xw7cw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8sa41"]
+radius = 219.0
+height = 478.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hi718"]
+radius = 722.443
+
+[node name="chudenemy" type="Node2D"]
+script = ExtResource("1_xw7cw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="physicalhitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_8sa41")
+
+[node name="stinkyerboi" type="Sprite2D" parent="."]
+scale = Vector2(14.4219, 14.4219)
+texture = ExtResource("2_xw7cw")
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="sightrange" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_hi718")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="shoottimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
