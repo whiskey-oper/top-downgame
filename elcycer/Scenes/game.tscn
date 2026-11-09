@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpqma4ixb215t"]
+[gd_scene load_steps=5 format=3 uid="uid://dpqma4ixb215t"]
 
 [ext_resource type="PackedScene" uid="uid://lpqcktsb5xkj" path="res://Scenes/level_1.tscn" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://brmtirx8y6ki0" path="res://Level_1/character_body_2d.tscn" id="2_wrm1d"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://b4xt4m7xts7vr" path="res://chudenemy.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://c2c1w458m7lcp" path="res://trueenemy.tscn" id="4_wowpa"]
+=======
+[ext_resource type="PackedScene" uid="uid://c2c1w458m7lcp" path="res://TRUEENEMY.tscn" id="4_wowpa"]
+>>>>>>> 4a28d22197e558743a9a92e80d7b38cd24163f7a
 
 [node name="Game" type="Node2D"]
 
@@ -11,12 +16,13 @@
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_wrm1d")]
 
 [node name="TRUEENEMY" parent="." instance=ExtResource("4_wowpa")]
-position = Vector2(1576, 347)
+position = Vector2(-331, -1432)
 patrol_points = Array[Vector2]([Vector2(-1500, 1300), Vector2(0, -300), Vector2(1500, 300), Vector2(-800, 0)])
 
 [node name="TRUEENEMY2" parent="." instance=ExtResource("4_wowpa")]
-position = Vector2(-1714, 1376)
+position = Vector2(-1855, 232)
 patrol_points = Array[Vector2]([Vector2(1600, 1300), Vector2(-400, -400), Vector2(-500, 600), Vector2(-1200, 1400)])
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-1157, 1460)
+[node name="chudenemy" parent="." instance=ExtResource("4_3dryh")]
+position = Vector2(-2532, 2624)
+patrol_points = Array[Vector2]([Vector2(15, 1065), Vector2(-2000, 1000), Vector2(-1900, 3000), Vector2(0, 0)])
