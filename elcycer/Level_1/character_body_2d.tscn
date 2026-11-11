@@ -1,10 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://brmtirx8y6ki0"]
+[gd_scene load_steps=10 format=3 uid="uid://brmtirx8y6ki0"]
 
 [ext_resource type="Script" uid="uid://b0smbqt3o25yi" path="res://Level_1/character_body_2d.gd" id="1_8empa"]
-[ext_resource type="Texture2D" uid="uid://uwikcubst01" path="res://Assests/Sprites/NEW_main_character.png" id="2_8empa"]
+[ext_resource type="Texture2D" uid="uid://c7fy5jfdbv4fb" path="res://Assests/Sprites/Idle_animation.png" id="2_wci0t"]
+[ext_resource type="Texture2D" uid="uid://c2uxu67oaad8k" path="res://Assests/Sprites/walking_animations.png" id="3_gqumq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8empa"]
 size = Vector2(153, 201.125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdf1a"]
+atlas = ExtResource("3_gqumq")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdfsm"]
+atlas = ExtResource("3_gqumq")
+region = Rect2(70, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7xfo"]
+atlas = ExtResource("3_gqumq")
+region = Rect2(0, 70, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h038"]
+atlas = ExtResource("3_gqumq")
+region = Rect2(70, 70, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yeva7"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle Animations",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdf1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdfsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7xfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h038")
+}],
+"loop": true,
+"name": &"Walking Animations",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(13, -11)
@@ -12,11 +54,9 @@ collision_layer = 2
 script = ExtResource("1_8empa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4, -38)
+position = Vector2(0, -36)
 scale = Vector2(9.375, 10.335)
-texture = ExtResource("2_8empa")
-hframes = 2
-vframes = 2
+texture = ExtResource("2_wci0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, -25.4375)
@@ -26,3 +66,7 @@ shape = SubResource("RectangleShape2D_8empa")
 zoom = Vector2(0.3, 0.3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -45)
+sprite_frames = SubResource("SpriteFrames_yeva7")
+animation = &"Idle Animations"
+autoplay = "Walking Animations"
