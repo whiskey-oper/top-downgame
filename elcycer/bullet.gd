@@ -7,7 +7,8 @@ func _physics_process(delta: float) -> void:
 	# Move the projectile forward over time
 	position += direction * speed * delta
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body:
+	Node2D) -> void:
 	if body.is_in_group("Player"):
 		# Apply damage logic to the player here
 		body.queue_free() # Temporary placeholder logic

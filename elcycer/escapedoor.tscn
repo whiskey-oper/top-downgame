@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://i6c3xq1svysh"]
+
+[ext_resource type="Script" uid="uid://ck5i5vkm1jul8" path="res://escapedoor.gd" id="1_kwo70"]
+[ext_resource type="Texture2D" uid="uid://dmdfamutc1cph" path="res://Assests/Sprites/escapedoor-1.png.png" id="2_q2lcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kahk0"]
+size = Vector2(329, 468)
+
+[node name="escapedoor" type="StaticBody2D"]
+script = ExtResource("1_kwo70")
+
+[node name="dor" type="Sprite2D" parent="."]
+scale = Vector2(16.7969, 16.7969)
+texture = ExtResource("2_q2lcm")
+
+[node name="touchme" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_kahk0")
