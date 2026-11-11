@@ -7,7 +7,7 @@ extends StaticBody2D
 @onready var door_collider = $CollisionShape2D # Change to $CollisionShape3D for 3D
 @onready var trigger_zone = $Area2D # Change to $Area3D for 3D
 
-# dfunc _ready() -> void:
+# func _ready() -> void:
 	# trigger_zone.body_entered.connect(_on_trigger_entered)
 
 func _on_trigger_entered(body: Node) -> void:
