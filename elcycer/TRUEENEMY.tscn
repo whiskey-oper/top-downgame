@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5w0jmmp127t" path="res://Assests/Sprites/enamamaidleforward-1.png.png" id="1_mc25d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8sa41"]
-radius = 219.0
+radius = 109.0
 height = 478.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hi718"]

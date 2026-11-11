@@ -1,15 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpqma4ixb215t"]
+[gd_scene load_steps=7 format=3 uid="uid://dpqma4ixb215t"]
 
+[ext_resource type="Script" uid="uid://6dcbobjukea7" path="res://global.gd" id="1_i6g32"]
 [ext_resource type="PackedScene" uid="uid://lpqcktsb5xkj" path="res://Scenes/level_1.tscn" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://brmtirx8y6ki0" path="res://Level_1/character_body_2d.tscn" id="2_wrm1d"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://b4xt4m7xts7vr" path="res://chudenemy.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://c2c1w458m7lcp" path="res://trueenemy.tscn" id="4_wowpa"]
-=======
-[ext_resource type="PackedScene" uid="uid://c2c1w458m7lcp" path="res://TRUEENEMY.tscn" id="4_wowpa"]
->>>>>>> 4a28d22197e558743a9a92e80d7b38cd24163f7a
+[ext_resource type="PackedScene" uid="uid://i6c3xq1svysh" path="res://escapedoor.tscn" id="5_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://bj4gsvxo7qkqd" path="res://keeeey.tscn" id="6_v158k"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_i6g32")
 
 [node name="Level 1" parent="." instance=ExtResource("1_qxrlw")]
 
@@ -23,6 +22,16 @@ patrol_points = Array[Vector2]([Vector2(-1500, 1300), Vector2(0, -300), Vector2(
 position = Vector2(-1855, 232)
 patrol_points = Array[Vector2]([Vector2(1600, 1300), Vector2(-400, -400), Vector2(-500, 600), Vector2(-1200, 1400)])
 
-[node name="chudenemy" parent="." instance=ExtResource("4_3dryh")]
-position = Vector2(-2532, 2624)
-patrol_points = Array[Vector2]([Vector2(15, 1065), Vector2(-2000, 1000), Vector2(-1900, 3000), Vector2(0, 0)])
+[node name="TRUEENEMY3" parent="." instance=ExtResource("4_wowpa")]
+position = Vector2(-4782, 6656)
+patrol_points = Array[Vector2]([Vector2(-4700, 5400), Vector2(-3800, 5300), Vector2(-3750, 4000), Vector2(-2020, 2220), Vector2(-3750, 4000), Vector2(-3800, 5300), Vector2(-4700, 5400), Vector2(-4800, 6650)])
+
+[node name="TRUEENEMY4" parent="." instance=ExtResource("4_wowpa")]
+position = Vector2(-4179, 3961)
+patrol_points = Array[Vector2]([Vector2(-2900, 4050), Vector2(-2800, 4200), Vector2(-1700, 4267), Vector2(-2800, 4200), Vector2(-2900, 4050), Vector2(-4150, 3900)])
+
+[node name="escapedoor" parent="." instance=ExtResource("5_1l0tm")]
+position = Vector2(2355, -2292)
+
+[node name="keeeey" parent="." instance=ExtResource("6_v158k")]
+position = Vector2(-3430, 6705)
