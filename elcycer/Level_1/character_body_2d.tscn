@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://brmtirx8y6ki0"]
 
 [ext_resource type="Script" uid="uid://b0smbqt3o25yi" path="res://Level_1/character_body_2d.gd" id="1_8empa"]
-[ext_resource type="Texture2D" uid="uid://6blytr0kysqm" path="res://Assests/Sprites/New Piskel (3).png" id="2_8empa"]
+[ext_resource type="Texture2D" uid="uid://uwikcubst01" path="res://Assests/Sprites/NEW_main_character.png" id="2_8empa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8empa"]
-size = Vector2(153, 226.25)
+size = Vector2(153, 201.125)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(13, -11)
@@ -15,9 +15,11 @@ script = ExtResource("1_8empa")
 position = Vector2(4, -38)
 scale = Vector2(9.375, 10.335)
 texture = ExtResource("2_8empa")
+hframes = 2
+vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(4, -25.4375)
 shape = SubResource("RectangleShape2D_8empa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
